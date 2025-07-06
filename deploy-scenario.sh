@@ -5,7 +5,7 @@ set -e
 SCENARIO=$1
 
 rm -rf dev-ctx/
-mkdir -p dev-ctx/{addresses,labels,priceapi}/31337
+mkdir -p dev-ctx/{addresses,labels,priceapi}/998
 
 forge script --rpc-url ${RPC_URL:-http://127.0.0.1:8545} "script/scenarios/$SCENARIO.s.sol" --broadcast --code-size-limit 100000 -vv
 cast rpc evm_increaseTime 86400 || true

@@ -13,7 +13,7 @@ trap cleanup EXIT
 
 
 PORT=${PORT:-8545}
-anvil --port $PORT --code-size-limit 100000 &
+anvil --port $PORT --code-size-limit 100000 --gas-limit 30000000 --fork-url https://rpc.hyperliquid-testnet.xyz/evm &
 sleep 1
 
 

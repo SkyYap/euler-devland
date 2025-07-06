@@ -1,12 +1,19 @@
 let chains = [
   //// PRODUCTION
 
+  // {
+  //   chainId: 31337,
+  //   name: 'dev',
+  //   safeBaseUrl: 'https://app.safe.global',
+  //   safeAddressPrefix: 'dev',
+  //   status: 'beta',
+  // },
   {
-    chainId: 31337,
-    name: 'dev',
+    chainId: 998, // Hyperliquid testnet chain ID
+    name: 'hyperliquid-testnet',
     safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'dev',
-    status: 'beta',
+    safeAddressPrefix: 'hyperliquid',
+    status: 'testnet',
   },
 ];
 

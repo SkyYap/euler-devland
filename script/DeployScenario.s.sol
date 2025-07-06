@@ -186,7 +186,7 @@ contract DeployScenario is Script {
 
         string memory result = vm.serializeAddress("coreAddresses", "evc", address(evc));
         result = vm.serializeAddress("coreAddresses", "eVaultFactory", address(factory));
-        vm.writeJson(result, "./dev-ctx/addresses/31337/CoreAddresses.json");
+        vm.writeJson(result, "./dev-ctx/addresses/998/CoreAddresses.json");
     }
 
     function genAsset(string memory symbol, uint8 decimals, string memory price, uint256 priceNum)
@@ -242,11 +242,11 @@ contract DeployScenario is Script {
         {
             string memory result = vm.serializeAddress("products", "vaults", vaults);
             string memory obj = vm.serializeString("products2", "testing-product", result);
-            vm.writeJson(obj, "./dev-ctx/labels/31337/products.json");
+            vm.writeJson(obj, "./dev-ctx/labels/998/products.json");
         }
 
         {
-            string memory pricesFile = "./dev-ctx/priceapi/31337/prices.json";
+            string memory pricesFile = "./dev-ctx/priceapi/998/prices.json";
             vm.writeLine(pricesFile, "{");
 
             for (uint256 i; i < assets.length; ++i) {
@@ -275,14 +275,14 @@ contract DeployScenario is Script {
 
         string memory result = vm.serializeAddress("eulerSwap", "eulerSwapFactory", address(eulerSwapFactory));
         result = vm.serializeAddress("eulerSwap", "eulerSwapPeriphery", address(eulerSwapPeriphery));
-        vm.writeJson(result, "./dev-ctx/addresses/31337/EulerSwapAddresses.json");
+        vm.writeJson(result, "./dev-ctx/addresses/998/EulerSwapAddresses.json");
     }
 
     function deployMaglevLens() internal {
         maglevLens = new MaglevLens();
 
         string memory result = vm.serializeAddress("maglev", "maglevLens", address(maglevLens));
-        vm.writeJson(result, "./dev-ctx/addresses/31337/MaglevAddresses.json");
+        vm.writeJson(result, "./dev-ctx/addresses/998/MaglevAddresses.json");
     }
 
     function getSubaccount(address user, uint8 account) internal pure returns (address) {
